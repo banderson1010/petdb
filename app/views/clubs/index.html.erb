@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fetured Clubs</h1>
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="http://www.petpalsanddogclub.com/layoutpp/hd1logo-pet-pals-and-dog-club.jpg" alt="Petpal">
+      <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xat1/v/t1.0-1/c0.0.160.160/p160x160/10334457_237405429788966_4281773963051119267_n.jpg?oh=8e4d58ae067e259a809d1554fae40fce&oe=567C9AF8&__gda__=1447154194_db6a477ded075099c1eaa79c6c6b16ae" alt="Doggie Day Club">
+
+    </a>
+  </div>
+  <div>
+  Participating Clubs
+</div><br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clubs.each do |club| %>
+      <tr>
+        <td><%= club.name %></td>
+        <td><%= link_to 'Show', club %></td>
+        <td><%= link_to 'Edit', edit_club_path(club) %></td>
+        <td><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Club', new_club_path %>
